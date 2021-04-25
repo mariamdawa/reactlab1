@@ -9,15 +9,13 @@ class App extends React.Component {
       initCount:10
     }
   }
-  // setInitCount=(val)=>{
-  //   this.setState({initCount:val})
-  // }
-  // changeInitCount={this.setInitCount}
+  
   
   render() {
     return (
       <div className="App">
        <Counter initCount={this.state.initCount} />
+       <Display/>
       </div>
     );
   }
@@ -65,6 +63,58 @@ class Counter extends React.Component{
         <button style={this.btnStyle} onClick={()=>this.changeCount("+")}>Increase</button>
         <button style={this.btnStyle} onClick={()=>this.changeCount("-")}>Decrease</button>
       </div>
+    );
+  }
+}
+class Display extends React.Component{
+  data={
+    "id":"1",
+    "jobTitleName":"Developer",
+    "firstName":"Ahmed",
+    "lastName":"Ali",
+    "preferredFullName":"Ahmed Ali",
+    "employeeCode":"E1",
+    "region":"CA",
+    "phoneNumber":"408-1234567",
+    "emailAddress":"ahmed.ali@gmail.com"
+  }
+  style={
+    padding:100,
+    fontSize:30,
+    backgroundColor:"gray",
+    color:"white"
+
+  }
+  render(){
+    return(
+      <div style={this.style}>
+        ID:{this.data.id}
+        <br/>
+        <br/>
+        First Name: {this.data.firstName}
+        <br/>
+        <br/>
+        Last Name: {this.data.lasttName}
+        <br/>
+        <br/>
+        First Name: {this.data.firstName}
+        <br/>
+        <br/>
+        Preferred Full Name: {this.data.preferredFullName}
+        <br/>
+        <br/>
+        Employee Code: {this.data.employeeCode}
+        <br/>
+        <br/>
+        Region: {this.data.region}
+        <br/>
+        <br/>
+        Phone Number: {this.data.phoneNumber}
+        <br/>
+        <br/>
+        Email Address: {this.data.emailAddress}
+
+       </div>
     );
   }
 }
