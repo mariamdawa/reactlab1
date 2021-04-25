@@ -23,6 +23,21 @@ class App extends React.Component {
   }
 }
 class Counter extends React.Component{
+  btnStyle={
+    height:50,
+    width:150,
+    backgroundColor:'black',
+    color:'white',
+    fontSize:20
+
+  }
+  counterStyle={
+    marginBottom:20,
+    fontSize:30
+  }
+  style={
+    padding:100,
+  }
   constructor(props){
     super();
     this.state={
@@ -43,12 +58,12 @@ class Counter extends React.Component{
   }
   render(){
     return(
-      <div>
-        <div>
+      <div style={this.style}>
+        <div style={this.counterStyle}>
           {this.state.count}
         </div>
-        <button onClick={()=>this.changeCount("+")}>Increase</button>
-        <button onClick={()=>this.changeCount("-")}>Deccrease</button>
+        <button style={this.btnStyle} onClick={()=>this.changeCount("+")}>Increase</button>
+        <button style={this.btnStyle} onClick={()=>this.changeCount("-")}>Decrease</button>
       </div>
     );
   }
